@@ -2,12 +2,11 @@
 * @Author: scottxiong
 * @Date:   2019-08-23 05:25:01
 * @Last Modified by:   scottxiong
-* @Last Modified time: 2019-08-23 05:35:03
+* @Last Modified time: 2019-08-23 05:41:18
  */
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"os"
@@ -27,7 +26,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("%s\n", all)
+	// fmt.Printf("%s\n", all)
 	f, err := os.Create("./tb.html")
 	if err != nil {
 		panic(err)
