@@ -23,4 +23,4 @@ copy above txt into `a.txt`, then you will get a `table.html` in your current fo
 
 ![](./imgs/1.png)
 
-If `a.txt` exists, the code will parse it. Note that it must written with Markdown.
+If `a.txt` exists, and the content is `not nil`, that's fine. Note that the text in `a.txt` must be written with Markdown.
