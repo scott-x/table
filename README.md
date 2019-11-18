@@ -21,6 +21,6 @@ Merry Art|Tina|xxx@merryart.cn|TEL：+86 574 8790xxxx EXT：xxx
 ```
 copy above txt into `a.txt`, then you will get a `table.html` in your current folder. Opening with chrome, see attached:
 
-![](imgs/1.png)
+![](./imgs/1.png)
 
 If `a.txt` exists, the code will parse it. Note that it must written with Markdown.
