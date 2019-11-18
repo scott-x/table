@@ -2,7 +2,7 @@
 * @Author: scottxiong
 * @Date:   2019-11-18 14:19:01
 * @Last Modified by:   scottxiong
-* @Last Modified time: 2019-11-18 16:08:16
+* @Last Modified time: 2019-11-18 19:22:00
  */
 package parse
 
@@ -15,10 +15,12 @@ import (
 	"strings"
 )
 
-func Parse(txt_path string) *defs.Lines {
+func Parse(txt_path string) (bool, *defs.Lines) {
 	lines := &defs.Lines{}
+	content := fs.ReadFile(txt_path)
+	content = strings.Trim(content, "\n")
 	exist := fs.IsExist(txt_path)
-	if !exist {
+	if !exist || content == "" {
 		cl.BoldCyan.Printf("You can define a.txt with syntax of Markdown, the cell content is separated by \"|\":\n")
 		cl.BoldGreen.Printf("Suplier|Name|Email|Phone\n")
 		cl.BoldGreen.Printf("QTOP|Lillian/Sue|xxx@qtop.com.cn / yyy@qtop.com.cn|Tel:(0)574 8921 xxxx\n")
@@ -31,10 +33,10 @@ func Parse(txt_path string) *defs.Lines {
 		if err := f.Close(); err != nil {
 			log.Fatal(err)
 		}
-		return lines
 	}
-	content := fs.ReadFile(txt_path)
-
+	if content == "" {
+		return false, lines
+	}
 	line_data := strings.Split(content, "\n")
 	for _, data := range line_data {
 		line := &defs.Line{}
@@ -42,11 +44,10 @@ func Parse(txt_path string) *defs.Lines {
 		line.Data = append(line.Data, dt...)
 		*lines = append(*lines, *line)
 	}
-	return lines
+	return true, lines
 }
 
 func GenTable(lines *defs.Lines) {
-
 	data := ""
 	data += "<!DOCTYPE html>\n" +
 		"<html lang=\"en\">\n" +

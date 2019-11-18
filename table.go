@@ -2,7 +2,7 @@
 * @Author: scottxiong
 * @Date:   2019-08-23 05:25:01
 * @Last Modified by:   scottxiong
-* @Last Modified time: 2019-11-18 17:45:38
+* @Last Modified time: 2019-11-18 19:12:53
  */
 package main
 
@@ -21,10 +21,11 @@ func main() {
 	flag.Parse()
 	if *customed {
 		// 用户自定义table
-		lines := parse.Parse("./a.txt")
-		if lines != nil {
+		flag, lines := parse.Parse("./a.txt")
+		if flag {
 			parse.GenTable(lines)
 		}
+
 	} else {
 		genTable()
 	}
