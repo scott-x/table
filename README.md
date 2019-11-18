@@ -24,3 +24,12 @@ copy above txt into `a.txt`, then you will get a `table.html` in your current fo
 ![](./imgs/1.png)
 
 If `a.txt` exists, and the content is `not nil`, that's fine. Note that the text in `a.txt` must be written with Markdown.
+
+for example:
+
+```
+Name | Dep | Sex | Country
+Rosemay | 18 | F | USA
+Jason | 20 | M | Japan
+Susan | 60| F | India
+```
