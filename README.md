@@ -25,7 +25,7 @@ copy above txt into `a.txt`, then you will get a `table.html` in your current fo
 
 If `a.txt` exists, and the content is `not nil`, that's fine. 
 
-<strong> Note that each Cell is separated by |</strong> 
+> Note that each Cell is separated by `|`
 
 for example:
 
