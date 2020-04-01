@@ -23,7 +23,9 @@ copy above txt into `a.txt`, then you will get a `table.html` in your current fo
 
 ![](./imgs/1.png)
 
-If `a.txt` exists, and the content is `not nil`, that's fine. Note that each Cell is separated by `|`.
+If `a.txt` exists, and the content is `not nil`, that's fine. 
+
+<p style="clolor:red;"> Note that each Cell is separated by </p> `|`
 
 for example:
 
