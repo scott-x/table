@@ -80,7 +80,7 @@ func GenTable(lines *defs.Lines) {
 		tab(4) + "</style>\n" +
 		"</head>\n" +
 		"<body>\n" +
-		tab(4) + "<table class=\"gridtable\">\n"
+	tab(4) + "<table class=\"gridtable\" style='margin:10px 0;'>\n"
 	for _, line := range *lines {
 		data += tab(8) + "<tr>\n"
 		for _, cell := range line.Data {
